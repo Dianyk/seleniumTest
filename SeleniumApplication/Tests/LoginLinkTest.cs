@@ -20,13 +20,13 @@ namespace SeleniumApplication.Tests
         public void ClickLoginLink()
         {
             //Arrange
-            IWebElement loginLink = Browser.FindElement(By.CssSelector("#JA_HeaderLogin"));
+            IWebElement loginLink = Browser.FindElement(By.Id("JA_HeaderLogin"));
 
             //Act
             loginLink.Click();
 
             //Assert
-            IWebElement expectedLoginButton = Browser.FindElement(By.CssSelector("#ctl00_BodyContent_btnLogin"));
+            IWebElement expectedLoginButton = Browser.FindElement(By.Id("ctl00_BodyContent_btnLogin"));
             Assert.AreEqual("https://secure.justanswer.co.uk/login.aspx", Browser.Url);
             Assert.IsTrue(expectedLoginButton.Displayed);
         }
